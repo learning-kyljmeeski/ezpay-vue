@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         async login() {
-            AuthService.login(this.username, this.password);
+            await AuthService.login(this.username, this.password);
         }
     }
 }
