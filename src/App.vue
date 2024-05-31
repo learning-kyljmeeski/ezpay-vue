@@ -32,5 +32,4 @@
 </template>
 
 <script setup>
-
 </script>
