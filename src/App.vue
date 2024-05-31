@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <Header />
     <v-main>
       <!-- <HelloWorld /> -->
       <Integration />
@@ -11,6 +12,7 @@
 
 <script setup>
 import Integration from './components/Integration.vue';
+import Header from "@/components/Header.vue";
 
   //
 </script>
