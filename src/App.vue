@@ -1,12 +1,9 @@
 <template>
   <v-app>
-    <Header />
+    <Header/>
     <v-main>
-      <!-- <HelloWorld /> -->
-      <Integration />
     </v-main>
 
-    <AppFooter />
   </v-app>
 </template>
 
@@ -14,5 +11,5 @@
 import Integration from './components/Integration.vue';
 import Header from "@/components/Header.vue";
 
-  //
+//
 </script>
