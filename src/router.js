@@ -7,6 +7,7 @@ import Dashboard from "@/views/Dashboard.vue";
 import Account from "@/views/Account.vue";
 import Transactions from "@/views/Transactions.vue";
 import Revenue from "@/views/Revenue.vue";
+import SignUp from "@/views/SignUp.vue";
 
 const routes = [
   {path: '/home', component: Home},
@@ -17,6 +18,7 @@ const routes = [
   {path: '/account', component: Account},
   {path: '/transactions', component: Transactions},
   {path: '/revenue', component: Revenue},
+  {path: '/signup', component: SignUp},
 ]
 
 const router = createRouter({
