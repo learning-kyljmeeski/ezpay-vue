@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <v-card>
-                    <v-card-title class="text-center">Sign up</v-card-title>
+                    <v-card-title class="text-center">Login</v-card-title>
                     <v-card-text>
                         <form>
                             <div class="form-group">
@@ -16,6 +16,9 @@
                                 <v-btn color="primary" @click="login">Log in</v-btn>
                             </div>
                         </form>
+                        <div class="text-center mt-2">
+                            <p>or <router-link to="/signup">Sign up</router-link></p>
+                        </div>
                     </v-card-text>
                 </v-card>
             </div>

@@ -25,6 +25,9 @@
                                 <v-btn color="primary" @click="signup">Sign Up</v-btn>
                             </div>
                         </form>
+                        <div class="text-center mt-2">
+                            <p>or <router-link to="/login">Log in</router-link></p>
+                        </div>
                     </v-card-text>
                 </v-card>
             </div>
