@@ -27,8 +27,7 @@
 </template>
 
 <script>
-import AuthService from '../service/auth-service.js'
-
+import AuthService from "@/service/auth-service";
 export default {
     data() {
         return {
@@ -38,7 +37,11 @@ export default {
     },
     methods: {
         async login() {
+<<<<<<< HEAD
             await AuthService.login(this.username, this.password);
+=======
+            await AuthService.login(this.username, this.password)
+>>>>>>> d452266e0b1d58b1a1a2ac02a42591ef38c6bb39
         }
     }
 }
