@@ -7,13 +7,22 @@
                     <v-card-text>
                         <form>
                             <div class="form-group">
+                                <v-text-field label="First Name" v-model="firstName"></v-text-field>
+                            </div>
+                            <div class="form-group">
+                                <v-text-field label="Last Name" v-model="lastName"></v-text-field>
+                            </div>
+                            <div class="form-group">
+                                <v-text-field label="Phone" v-model="phone"></v-text-field>
+                            </div>
+                            <div class="form-group">
                                 <v-text-field label="Username" v-model="username"></v-text-field>
                             </div>
                             <div class="form-group">
                                 <v-text-field label="Password" v-model="password" type="password"></v-text-field>
                             </div>
                             <div class="form-group">
-                                <v-btn color="primary" @click="login">Log in</v-btn>
+                                <v-btn color="primary" @click="signup">Sign Up</v-btn>
                             </div>
                         </form>
                     </v-card-text>
@@ -27,12 +36,18 @@
 export default {
     data() {
         return {
+            firstName: '',
+            lastName: '',
+            phone: '',
             username: '',
             password: ''
         }
     },
     methods: {
-        login() {
+        signup() {
+            console.log('First Name:', this.firstName);
+            console.log('Last Name:', this.lastName);
+            console.log('Phone:', this.phone);
             console.log('Username:', this.username);
             console.log('Password:', this.password);
         }
