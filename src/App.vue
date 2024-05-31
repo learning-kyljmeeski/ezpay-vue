@@ -1,7 +1,8 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld />
+      <!-- <HelloWorld /> -->
+      <Integration />
     </v-main>
 
     <AppFooter />
@@ -9,5 +10,7 @@
 </template>
 
 <script setup>
+import Integration from './components/Integration.vue';
+
   //
 </script>
