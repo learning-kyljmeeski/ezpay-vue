@@ -16,7 +16,7 @@ class AuthService {
       if (response) {
         console.log(response.data);
       } else {
-        console.log("ERROR");
+        throw new Error("Error");
       }
       const token = response.data.token;
       const decodedJwt = jwtDecode(token);
@@ -34,6 +34,15 @@ class AuthService {
       console.error(error)
       LocalstorageService.cleaner();
       await VuexStoreService.cleaner();
+      throw new Error("Error");
+    }
+  }
+
+  async resetPassword(email) {
+    try {
+      await axios.get(`${baseURL}/auth/attemptToReset?to=${email}`);
+    } catch (error) {
+      console.error(error);
     }
   }
 }

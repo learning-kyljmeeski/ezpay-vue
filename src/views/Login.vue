@@ -24,8 +24,50 @@
                 <router-link to="/signup">Sign up</router-link>
               </p>
             </div>
+            <div>
+              <v-btn class="bg-danger text-white d-block w-100" @click="dialog = true">Забыли пароль?</v-btn>
+            </div>
           </v-card-text>
         </v-card>
+        <div class="text-center pa-4">
+          <v-dialog
+            v-model="dialog"
+          >
+            <v-card
+              prepend-icon="mdi-lock-reset"
+              text="Введите свой email"
+              title="Сброс пароля"
+            >
+              <v-text-field type="text" id="email" class="mx-3" v-model="forgotUsername"></v-text-field>
+              <template v-slot:actions>
+                <v-btn
+                  class="ms-auto bg-danger d-block text-white mx-auto"
+                  text="Сбросить"
+                  @click="resetPassword"
+                ></v-btn>
+              </template>
+            </v-card>
+          </v-dialog>
+        </div>
+        <div class="text-center pa-4">
+          <v-dialog
+            v-model="send"
+          >
+            <v-card
+              prepend-icon="mdi-lock-reset"
+              text="Ссылка отправлена на почту"
+              title="Проверьте почту"
+            >
+              <template v-slot:actions>
+                <v-btn
+                  class=" bg-success d-block text-white mx-auto"
+                  text="Ок"
+                  @click="send = false"
+                ></v-btn>
+              </template>
+            </v-card>
+          </v-dialog>
+        </div>
       </div>
     </div>
   </v-container>
@@ -43,7 +85,10 @@ export default {
     return {
       username: '',
       password: '',
-      error: ''
+      forgotUsername: '',
+      error: '',
+      dialog: false,
+      send: false
     }
   },
   methods: {
@@ -58,6 +103,14 @@ export default {
       }
 
     },
+
+     async resetPassword() {
+      await AuthService.resetPassword(this.forgotUsername);
+      this.forgotUsername = '';
+      this.dialog = false;
+      this.send = true;
+    },
+
     resetError() {
       this.error= ''
     }
