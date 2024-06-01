@@ -15,6 +15,7 @@
 
     <v-list density="compact" nav>
       <v-list-item color="red" prepend-icon="mdi-account-circle-outline" title="Account"  to="/account"></v-list-item>
+      <v-list-item color="red" prepend-icon="mdi mdi-domain" title="Companies"  to="/companies"></v-list-item>
       <v-list-item color="red" prepend-icon="mdi-bank-transfer" title="Транзакции" to="/transactions"></v-list-item>
       <v-list-item color="red" prepend-icon="mdi-cash" title="Прибыль" to="/revenue"></v-list-item>
     </v-list>
