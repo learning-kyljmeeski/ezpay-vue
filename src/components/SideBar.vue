@@ -7,7 +7,6 @@
     <v-list>
       <v-list-item
         :prepend-avatar="profile_photo_url"
-        subtitle="sandra_a88@gmailcom"
         :title="user"
       ></v-list-item>
     </v-list>
@@ -24,7 +23,6 @@
 </template>
 <script>
 import {mapGetters} from "vuex";
-
 export default {
   data () {
     return {

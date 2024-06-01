@@ -14,7 +14,7 @@ class AuthService {
         password: password
       });
       if (response) {
-        console.log(response);
+        console.log(response.data);
       } else {
         console.log("ERROR");
       }
@@ -31,9 +31,9 @@ class AuthService {
       await router.push('/home');
 
     } catch (error) {
+      console.error(error)
       LocalstorageService.cleaner();
       await VuexStoreService.cleaner();
-      throw error;
     }
   }
 }
