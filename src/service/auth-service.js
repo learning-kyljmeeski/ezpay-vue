@@ -28,7 +28,7 @@ class AuthService {
       console.log(decodedJwt.sub, authRole, true, profile_photo_url);
       await VuexStoreService.setter(decodedJwt.sub, authRole, true, profile_photo_url);
 
-      //await router.push({name: 'home'})
+      await router.push('/home');
 
     } catch (error) {
       LocalstorageService.cleaner();

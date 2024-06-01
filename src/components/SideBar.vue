@@ -2,12 +2,13 @@
   <v-navigation-drawer
     expand-on-hover
     rail
+    v-if="auth"
   >
     <v-list>
       <v-list-item
-        prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
+        :prepend-avatar="profile_photo_url"
         subtitle="sandra_a88@gmailcom"
-        title="Sandra Adams"
+        :title="user"
       ></v-list-item>
     </v-list>
 
@@ -22,12 +23,17 @@
   </v-navigation-drawer>
 </template>
 <script>
+import {mapGetters} from "vuex";
+
 export default {
   data () {
     return {
       drawer: true,
       rail: true,
     }
+  },
+  computed: {
+    ...mapGetters(["role",  "user", "profile_photo_url", "auth"]),
   },
 }
 </script>
