@@ -1,4 +1,6 @@
 ## SITE
+Login - user
+Password - pass
 
 [http://35.246.159.120/home](http://35.246.159.120/home)
 
