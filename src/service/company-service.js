@@ -19,7 +19,25 @@ class CompanyService {
           console.log("ERROR");
         }
       } catch (error) {
-        LocalstorageService.cleaner();
+        throw error;
+      }
+    }
+
+    async getCompany(companyId) {
+        const token = LocalstorageService.getter(ACCESS_TOKEN_NAME);
+        const config = {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }
+      try {
+        const response = await axios.get(`${baseURL}/company/${companyId}`, config);
+        if (response) {
+          return response.data;
+        } else {
+          console.log("ERROR");
+        }
+      } catch (error) {
         throw error;
       }
     }
