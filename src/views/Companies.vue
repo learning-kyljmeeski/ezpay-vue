@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import CompanyService from '@/service/company-service';
 export default {
   data() {
     return {
@@ -44,24 +45,8 @@ export default {
     this.fetchCompanies();
   },
   methods: {
-    fetchCompanies() {
-      // Here you can make an API call to fetch data
-      // For this example, using static data
-      this.companies = [
-        {
-          id: "cb4d5112-ba37-4d06-821b-11033fcb76a2",
-          email: "example@example.com",
-          companyName: "Example Company",
-          businessType: "Technology",
-          taxId: "123456789",
-          supportPhone: "+1234567890",
-          createDate: "2024-06-01T05:22:57.865782",
-          price: 99.99,
-          addressCompany: "1234 Example Street, Example City, EX 12345",
-          statementDescription: null,
-          currency: "USD"
-        }
-      ];
+    async fetchCompanies() {
+      this.companies = await CompanyService.getAllCompanies();
     },
     goToCompany(item) {
       this.$router.push(`/companies/${item.id}`);

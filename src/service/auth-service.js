@@ -14,7 +14,7 @@ class AuthService {
         password: password
       });
       if (response) {
-        console.log(response);
+        console.log(response.data);
       } else {
         console.log("ERROR");
       }
