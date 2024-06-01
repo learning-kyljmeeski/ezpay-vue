@@ -5,9 +5,8 @@
   >
     <v-list>
       <v-list-item
-        prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
-        subtitle="sandra_a88@gmailcom"
-        title="Sandra Adams"
+        :prepend-avatar="image_url"
+        :title="username"
       ></v-list-item>
     </v-list>
 
@@ -22,9 +21,13 @@
   </v-navigation-drawer>
 </template>
 <script>
+import LocalstorageService from '@/service/localstorage-service';
 export default {
   data () {
+    const user = JSON.parse(LocalstorageService.getter("vuex"));
     return {
+      username: user.user,
+      image_url: user.profile_photo_url,
       drawer: true,
       rail: true,
     }
